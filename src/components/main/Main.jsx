@@ -1,17 +1,30 @@
 import { Row, Container } from "react-bootstrap";
 import style from "./Main.module.css";
-import { posts } from "../../posts.js";
+import { posts} from "../../posts.js";
 import { PostCard } from "./PostCard.jsx";
 import { useState } from "react";
+
+ 
 export function Main() {
-  const [, ] = useState('')
+  const [title, SetTitle] = useState('')
+  const [text, SetText] = useState('')
+
+
+  function onSubmit(event){
+    event.preventDefault();
+    if(title === '' && text === ''){
+      console.log('vuoto uno dei due')
+      return
+    }
+
+  }
+
   return (
     <div className={[style.bgcolor_lightGrey, style.flex_grow_1].join(" ")}>
       <Container>
-        <form>
-          <input onChange={(e)=>(e.target.value)} type="text" className="col-4" value={}></input>
-          <input onChange={(e)=>(e.target.value)} type="text" className="col-4" value={}></input>
-          <input onChange={(e)=>(e.target.value)} type="text" className="col-4" value={}></input>
+        <form onSubmit ={onSubmit} action="">
+          <input onChange={(e)=>SetTitle((e.target.value).trim())} type="text" className="col-4" value={title} placeholder="inserisci titolo"></input>
+          <input onChange={(e)=>SetText((e.target.value).trim())} type="text" className="col-4" value={text} placeholder="inserisci testo"></input>
           <input type="submit" className="col-4"></input>
         </form>
         <Row
