@@ -24,7 +24,7 @@ function getCssTags(tag) {
 }
 
 export function PostCard(props) {
-  const {id = "", title = "", image = "", content = "", tags = [], published = false} = props;
+  const {id = "", title = "", image = "", content = "", tags = [], published = false, callback} = props;
 
   return (
     <div className="col-4">
@@ -40,9 +40,7 @@ export function PostCard(props) {
            
           </p>
           <p className="card-text">{content}</p>
-          <a href="#" className="btn btn-primary">
-            add
-          </a>
+          <a href="#" className="btn btn-primary" onClick={callback}>remove</a>
         </div>
       </div>
     </div>

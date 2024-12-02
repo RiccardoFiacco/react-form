@@ -1,5 +1,5 @@
 import gto from './assets/gto2.jpg'
-const lenguage = ['html', 'css', 'js', 'php'] 
+export const lenguage = ['html', 'css', 'js', 'php'] 
 let max = 3;
 
 function nRandom(max){
@@ -7,7 +7,7 @@ function nRandom(max){
 	return random
 }
 
-function createArr(array){
+export function createArr(array){
 	let finalArr = [];
 	for(let i=0; i<4;i++){
 		let num = nRandom(max);
